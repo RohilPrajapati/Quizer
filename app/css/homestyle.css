@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+.nav{
+    text-align: center;
+    width: 100%;
+    line-height: 40px;
+}
+
+.nav_logo{
+    width: 80px;
+    height: 80px;
+}
+.nav_menu{
+    background-color: #f74720   ;
+}
+.nav_item{
+    display: inline-block;
+    padding: 0px 10px;
+    width: 120px;
+}
+.nav_item:hover{
+    background-color: rgb(255, 144, 162);
+}
+.nav_link{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+/* form css */
+.forms{
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.login_form , .signup_form{
+    width: 40%;
+    height: 450px;
+    margin: 0px 20px;
+    /* background-color: red; */
+    text-align: center;
+}
+.admin_login{
+    width: 40%;
+    margin: 20px auto;
+    text-align: center;
+}
+.form_heading{
+    color: #f74720;
+    margin: 20px auto;
+}
+
+.inputBox{
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 0px 10px ;
+    border-radius: 10px;
+    border: 1px solid #f74720;
+}
+.inputBox_password{
+    width: 70%;
+    margin-right: 20px;
+}
+
+.toggler{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    color: #f74720;
+}
+
+.inputBox:focus{
+    outline: 2px solid #f74720;
+}
+.form_submit_btn{
+    width: 40%;
+    height: 40px;
+    background-color: #f74720;
+    color: white;
+    font-size: 24px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+/* home page css */
+.container{
+    width: 90%;
+    margin: 10px auto;
+}
+.first_home_row{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+    height: 80vh;
+}
+.home_text{
+    padding: 10px 20px;
+    text-align: center;
+}
+.home_page_img{
+    height: 350px;
+    margin: 0px auto;
+}
+.home_img_div{
+    height: 350px;
+}
+.home_head{
+    color: #f74720;
+    font-size: 72px;
+    margin: 10px 0px;
+}
+.home_desc{
+    line-height: 25px;
+    margin: 10px auto;
+}
+.second_home_row{ 
+    display: grid;
+    grid-template-columns: 65% 35%;
+    align-items: center;
+    height: 100vh;
+}
+.home_register{
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    color: #f74720;
+    border: 1px solid #f74720;
+}
+.home_register:hover{
+    background-color: #f74720;
+    color: white;
+}
+/* alerts */
+
+.error{
+    text-align: left;
+    width: 80%;
+    margin: 0px auto;
+    padding: 5px 0px;
+    color: red;
+    display: none;
+}
+
+/* msg */
+
+.msg{
+    width: 100%;
+    background-color: #f39e8b;
+    text-align: center;
+    padding: 20px auto;
+}
+.msg_form{
+    padding: 30px 0px;
+    vertical-align: middle;
+}
+ .msg_head{
+     color: white;
+ }   
+.msg_title{
+    font-size: 18px;
+    width: 70%;
+    line-height: 40px;
+    padding: 0px 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    /* border: 0px; */
+    border: 1px solid #f74720;
+}
+.msg_title:focus{
+    outline:2px solid #f74720;
+}
+.msg_desc{
+    font-size: 18px;
+    resize: none;
+    width: 70%;
+    height: 200px;
+    line-height: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #f74720;
+}
+.msg_desc:focus{
+    outline:2px solid #f74720;
+}
+.msg_btn{
+    margin: 10px auto;
+    width: 120px;
+    height: 40px;
+    background-color: #f74720;
+    color: white;
+    font-size: 16px;
+    border: 0px;
+    border-radius: 10px;
+}
+.update_msg_form{
+    text-align: center;
+    background: #f39e8b;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #f74720;
+}
+
+/* profile css */
+
+.player_info{
+    display: inline-block;
+    width: 60%;
+    line-height: 30px;
+}
+.logout{
+    color: white;
+    text-decoration: none;
+}
+.logout_btn{
+    background-color: #f74720;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    width: 60px;
+    text-align: center;
+    float: right;
+}
+
+/* games css */
+
+.mcq_form{
+    margin: 20px auto;
+    width: 80%;
+    background-color: aliceblue;
+    padding: 20px 50px;
+    border-radius: 10px;
+
+}
+.mcq_heading{
+    text-align: center;
+}
+.question{
+    font-size: 24px;
+}
+.answer{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    line-height: 30px;
+    margin: 20px 0px;
+}
+.ans_chkbox{
+    width: 18px;
+    height: 18px;
+}
+.ans_item{
+    font-size: 18px;
+    margin: 10px 0px;
+}
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 10px 20px;
+    text-align: left;
+}
+th{
+    background-color: #f74720;
+    color: white;
+    border: none;
+    text-align: center;
+}
+.operation_col{
+    /* width: 100px; */
+    text-align: center;
+}
+.tbl_icon{
+    height: 20px;
+    width: 20px;
+}
+.header{
+    margin: 30px 0px;
+    text-align: center;
+}
+table{
+    margin: 10px auto;
+    width: 90%;
+}
+.tbl_sn{
+    width: 10%;
+}
+.tbl_msg{
+    width: 40%;
+}
+.tbl_icon{
+    margin: 0px 5px;
+}
+.btn{
+    margin: 20px 0px;
+    border: 2px solid #f74720;
+    background-color: white;
+    padding: 10px   ;
+    border-radius: 10px;
+    text-align: center;
+    color: #f74720;
+    font-weight: bold;
+    text-decoration: none;
+}

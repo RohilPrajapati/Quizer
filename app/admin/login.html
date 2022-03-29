@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/homestyle.css"> 
+    <title>Admin Login</title>
+</head>
+<body>
+    <form action="login.php" method="post" class="admin_login" id="player_login_form" onsubmit="event.preventDefault(); validateLogin();">
+        <h1 class="form_heading">Login</h1>
+        <input type="email" name="email" id="email" class="inputBox" placeholder="E-mail"><br>
+        <div class="error" id="email_error"></div>
+        <input type="password" name="password" id="password" class="inputBox inputBox_password" placeholder="Password"><input type="checkbox" name="hideshow" class="toggler" onclick="showHide()"><br>
+        <div class="error" id="password_error"></div>
+        <input class="form_submit_btn" type="submit" value="Login">
+    </form>
+    <script src="../js/main.js"></script>
+</body>
+</html>

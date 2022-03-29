@@ -1,0 +1,135 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+.main_container{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.admin_nav{
+    position: fixed;
+    background-color: #f74720;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+.admin_nav h1{
+    margin: 10px auto   ;
+}
+.container{
+    margin-left: 22%;
+    margin-right: 15px;
+    width: 70%;
+    text-align: justify;
+}
+.admin_nav h1{
+    color: white;
+}
+.admin_nav_menu{
+    margin: 20px auto;
+    list-style: none;
+}
+.admin_nav_item{
+    line-height: 30px;
+    width: 100%;
+    padding: 5px 0px;
+}
+.admin_nav_item a{
+    color: white;
+    text-decoration: none;
+}
+.admin_nav_item:hover{
+    background-color: #f5856c;
+}
+
+.header{
+    margin: 10px auto;
+    color: #f74720;
+}
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 10px 20px;
+}
+th{
+    background-color: #f74720;
+    color: white;
+    border: none;
+    text-align: center;
+}
+table{
+    margin: 50px 0px;
+}
+.btn{
+    margin: 20px 0px;
+    border: 2px solid #f74720;
+    background-color: white;
+    padding: 10px   ;
+    border-radius: 10px;
+    text-align: center;
+    color: #f74720;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn:hover{
+    color: white;
+    background-color: #f74720;
+}
+.input, .quesinput{
+    width: 100%;
+    line-height: 40px;
+    margin: 10px;
+    text-align: center;
+    color: #f74720;
+    border: 1px solid #f74720;
+}
+.input:focus, .quesinput:focus{
+    outline: #f74720;
+    border: 2px solid #f74720;
+}
+.admin_form{
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+.correct_ans{
+    color: green;
+    border: 2px solid green;
+}
+.correct_ans:focus{
+    outline: green;
+    border: 2px solid green;
+}
+.player_info{
+    display: inline-block;
+    width: 60%;
+    line-height: 30px;
+}
+.success_msg{
+    display: none;
+}
+.inputBox{
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 0px 10px ;
+    border-radius: 10px;
+    border: 1px solid #f74720;
+}
+.inputBox_password{
+    width: 70%;
+    margin-right: 20px;
+}
+.toggler{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    color: #f74720;
+}

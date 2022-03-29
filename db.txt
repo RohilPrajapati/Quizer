@@ -1,0 +1,88 @@
+for user table
+
+CREATE TABLE Users(
+    user_id int NOT NULL AUTO_INCREMENT,
+    username varchar(100) NOT NULL UNIQUE,
+    email varchar(150) UNIQUE,
+    password varchar(255),
+    is_admin bool NOT NULL DEFAULT 0,
+    is_player bool NOT NULL DEFAULT 1,
+    PRIMARY KEY (user_id)
+);
+
+ALTER TABLE users
+MODIFY COLUMN user_id int;
+
+
+INSERT INTO users (username, email, password,is_admin)
+VALUES ("rohil", "rohilprajapati@gmail.com","$2y$10$bS.j3CBfDO56mDRig6zuKuTROxJsy2d3GwThFxWYs3IhpjuIyhnNu",1);
+
+
+CREATE TABLE feedbacks(
+    fb_id int NOT NULL AUTO_INCREMENT,
+    title varchar(150) NOT NULL,
+    message text(1000) NOT NULL,
+    user_id int NOT NULL,
+    PRIMARY KEY (fb_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+
+INSERT INTO feedbacks (title, message, user_id)
+VALUES ("There is problem in Home page", "Button is not align in center of the page and home page look bad.",1);
+
+
+CREATE TABLE questions(
+    qns_id int NOT NULL AUTO_INCREMENT,
+    question VARCHAR(255) NOT NULL,
+    ans_id INT,
+    PRIMARY KEY (qns_id)
+);
+
+INSERT INTO questions (question, ans_id) values ('Which animal never drinks water in its entire life?',4);
+INSERT INTO questions (qns_id,question, ans_id) values (2,'The largest cell is __________________',7);
+INSERT INTO questions (question, ans_id) values ('Which is the largest human cell?',12);
+INSERT INTO questions (question, ans_id) values ('_________________ is the longest cell.',13);
+INSERT INTO questions (question, ans_id) values ('There are _____ number of muscles in human.',19);
+
+FOREIGN KEY (ans_id) REFERENCES answers (ans_id)
+ALTER TABLE questions ADD FOREIGN KEY (ans_id) REFERENCES answers(ans_id);
+
+ALTER TABLE questions DROP CONSTRAINT ans_id;
+
+CREATE TABLE answers(
+    ans_id INT NOT NULL AUTO_INCREMENT,
+    answer VARCHAR(255) NOT NULL,
+    qns_id INT,
+    PRIMARY KEY (ans_id)
+);
+
+INSERT INTO answers (answer, qns_id) values ('Kangaroo',1),('Hippopotamus',1),('Rat',1),('Kangaroo rat',1);
+INSERT INTO answers (answer, qns_id) values ('Nerve Cell',2),('Ovum',2),('The egg of an Ostrich',2),('None of the above',2);
+INSERT INTO answers (answer, qns_id) values ('Liver',3),('Skin',3),('Spleen',3),('None of the above',3);
+INSERT INTO answers (answer, qns_id) values ('Nerve Cell',4),('Skin',4),('Spleen',4),('None of the above',4);
+INSERT INTO answers (answer, qns_id) values ('638',5),('637',5),('639',5),('640',5);
+
+ALTER TABLE answers ADD FOREIGN KEY (qns_id) REFERENCES questions(qns_id);
+
+
+SELECT ans_id FROM answers ORDER BY ans_id DESC LIMIT 1;
+
+UPDATE questions SET ans_id = 
+WHERE  = ;
+
+
+CREATE TABLE scores(
+    s_id INT NOT NULL AUTO_INCREMENT,
+    attemptNumQues INT NOT NULL,
+    marks INT,
+    user_id INT NOT NULL,
+    PRIMARY KEY (s_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+INSERT INTO scores (attemptNumQues, marks, user_id) values ();
+
+SELECT scores.attemptNumQues, scores.marks, users.username
+FROM scores
+INNER JOIN users ON scores.user_id=users.user_id;
