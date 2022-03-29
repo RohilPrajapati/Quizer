@@ -151,6 +151,14 @@
     color: red;
     display: none;
 }
+.feedback_error{
+    border-radius: 10px;
+    width: 30%;
+    margin: 5px auto;
+    background-color: red;
+    color: white;
+    line-height: 30px;
+}
 
 /* msg */
 

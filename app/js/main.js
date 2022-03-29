@@ -135,3 +135,27 @@ function addQnsAnsValidation(){
         // form.submit();
     }
 }
+
+function validate_feedback(){
+    title = document.getElementById('title');
+    msg = document.getElementById('msg');
+    error_title = document.getElementById('error_title');
+    error_msg = document.getElementById('error_msg');
+    is_valide = true;
+    error_title.style.display = 'none';
+    error_msg.style.display = 'none';
+    if(title.value.trim() == ''){
+        error_title.innerHTML = "Title can't be empty.";
+        error_title.style.display = 'block';
+        is_valide= false;
+    }
+    if(msg.value.trim() == ''){
+        error_msg.innerHTML = "Message can't be empty.";
+        error_msg.style.display = 'block';
+        is_valide = false;
+    }
+    if(is_valide){
+        document.getElementById('feedbackForm').submit();
+    }
+
+}

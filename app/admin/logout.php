@@ -7,7 +7,4 @@
         session_destroy();
         redirectAlertMessage('You have been logout !','login.html');
     }
-    else{
-        echo "You are not login!";
-    }
 ?>
