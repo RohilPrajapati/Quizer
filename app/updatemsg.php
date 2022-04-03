@@ -19,13 +19,11 @@
         $id = $_GET['id'];
         $sql = "SELECT * FROM feedbacks WHERE fb_id = $id";
         $result = mysqli_query($conn, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            $feedbacks = mysqli_fetch_assoc($result);
-            }
-        } else {
+        if (mysqli_num_rows($result) == 0) {
             echo "No records found!!";
             exit;
-    }
+        } else {
+            $feedbacks = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,3 +50,7 @@
     </form>
 </body>
 </html>
+<?php
+        }
+    }
+?>

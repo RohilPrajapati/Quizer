@@ -2,10 +2,10 @@
     include "../config/dbconfig.php";
     include "../config/utility.php";
     if($_POST){
-        $username = $_REQUEST['username'];
-        $email = $_REQUEST['email'];
-        $password = $_REQUEST['password'];
-        $h_password = password_hash($password,PASSWORD_DEFAULT);
+        $username = addslashes($_REQUEST['username']);
+        $email = addslashes($_REQUEST['email']);
+        $password = addslashes($_REQUEST['password']);
+        $h_password = addslashes(password_hash($password,PASSWORD_DEFAULT));
         $q_select = "SELECT * FROM users where email='$email'";
         $users = mysqli_query($conn,$q_select);
         if (mysqli_num_rows($users) == 0){

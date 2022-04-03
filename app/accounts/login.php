@@ -2,8 +2,8 @@
     include '../config/dbconfig.php';
     require '../config/utility.php';
     if($_POST){
-        $email = $_REQUEST['email'];
-        $password = $_REQUEST['password'];
+        $email = addslashes($_REQUEST['email']);
+        $password = addslashes($_REQUEST['password']);
         $q_user = "SELECT * FROM users WHERE email = '$email'";
         $result = mysqli_query($conn,$q_user);
         if(mysqli_num_rows($result)!=0){

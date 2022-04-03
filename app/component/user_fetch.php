@@ -18,7 +18,7 @@
         if (mysqli_num_rows($result) != 0){
             $user = mysqli_fetch_array($result);
         }else{
-            redirectAlertMessage("Session is invalid Please login again");
+            redirectAlertMessage("Session is invalid Please login again","../admin/login.php");
             session_unset();
             session_destroy();
         }

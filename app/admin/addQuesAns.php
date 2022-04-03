@@ -6,15 +6,15 @@
     if(!$_SESSION['id']){
         redirectAlertMessage('You are not login. Please login first','login.html');
     }
-    if(!$user['is_admin']){
+    if($user['is_admin']!=1){
         redirectAlertMessage("You are not admin Please login again",'login.html');
     }
     if($_POST){
-        $question = $_REQUEST['question'];
-        $answer1 = $_REQUEST['answer1'];
-        $answer2 = $_REQUEST['answer2'];
-        $answer3 = $_REQUEST['answer3'];
-        $correctAns = $_REQUEST['correctAns'];
+        $question = addslashes($_REQUEST['question']);
+        $answer1 = addslashes($_REQUEST['answer1']);
+        $answer2 = addslashes($_REQUEST['answer2']);
+        $answer3 = addslashes($_REQUEST['answer3']);
+        $correctAns = addslashes($_REQUEST['correctAns']);
         
         $q_question = "SELECT * FROM questions where question = '$question'";
         $result_qns = mysqli_query($conn,$q_question);
@@ -36,12 +36,10 @@
             mysqli_query($conn,$q_update_qns);
             echo "
                 <script>
-                    msg = document.getElementById('success_msg');
-                    msg.innerHTML = 'Question and Answer has been inserted';
-                    msg.style.display = 'block';
-                    msg.style.color = 'green';
+                    alert('Question and Answer has been added');
                 </script>
             ";
+            header("refresh:0;url=qnans.php");
 
         }else{
             echo "
@@ -74,14 +72,17 @@
             <div class="success_msg" id="success_msg">
 
             </div>
-            <form class="admin_form" action="" method="post" onsubmit="event.preventDefault(); addQnsAnsValidation();">
+            <form class="admin_form" id="addQnsAnsForm" action="" method="post" onsubmit="event.preventDefault(); addQnsAnsValidation();">
                 <input type="text" class="quesinput" id="question"  name="question" placeholder="Question"><br>
                 <span id="qns_error"></span>
                 <input type="text" class="input" id="answer1" name="answer1" placeholder="Answer 1"><br>
+                <span id="ans1_error"></span>
                 <input type="text" class="input" id="answer2" name="answer2" placeholder="Answer 2"><br>
+                <span id="ans2_error"></span>
                 <input type="text" class="input" id="answer3" name="answer3" placeholder="Answer 3"><br>
+                <span id="ans3_error"></span>
                 <input type="text" class="input correct_ans" id="correctAns" name="correctAns" placeholder="Correct Answer"><br>
-                <span id="ans_error"></span>
+                <span id="ans4_error"></span>
                 <input class="btn" class="submitbutton"  type="submit" value="Submit">
             </form>
         </div>

@@ -1,7 +1,7 @@
 <?php
     require '../config/dbconfig.php';
     require '../config/utility.php';
-    require '../component/user_fetch.php';
+    require '../component/user_fetch.php';  
     session_start();
     if(!$_SESSION['id']){
         redirectAlertMessage('You are not login. Please login first','login.html');
@@ -32,3 +32,6 @@
     </div>
 </body>
 </html>
+<?php
+    mysqli_close($conn);
+?>

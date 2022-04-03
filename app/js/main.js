@@ -113,7 +113,11 @@ function addQnsAnsValidation(){
     ans3 = document.getElementById('answer3');
     c_ans = document.getElementById('correctAns');
     qns_error = document.getElementById('qns_error');
-    ans_error = document.getElementById('ans_error');
+    ans_error = document.getElementById('ans1_error');
+    ans_error = document.getElementById('ans2_error');
+    ans_error = document.getElementById('ans3_error');
+    ans_error = document.getElementById('ans4_error');
+    form = document.getElementById('addQnsAnsForm');
 
     qns_error.style.display = "none";
     ans_error.style.display = "none";
@@ -125,14 +129,33 @@ function addQnsAnsValidation(){
         qns_error.style.color = "red";
         is_validate= false;
     }
-    if(ans1.value.trim()=="" && ans2.value.trim()=="" && ans3.value.trim()=="" && c_ans.value.trim()==""){
-        ans_error.innerHTML = "Answers can't be empty";
-        ans_error.style.display = "block";
-        ans_error.style.color = "red";
+    if(ans1.value.trim()==""){
+        ans1_error.innerHTML = "Answers one can't be empty";
+        ans1_error.style.display = "block";
+        ans1_error.style.color = "red";
         is_validate= false;
     }
+    if(ans2.value.trim()==""){
+        ans2_error.innerHTML = "Answers two can't be empty";
+        ans2_error.style.display = "block";
+        ans2_error.style.color = "red";
+        is_validate= false;
+    }
+    if(ans3.value.trim()==""){
+        ans3_error.innerHTML = "Answers three can't be empty";
+        ans3_error.style.display = "block";
+        ans3_error.style.color = "red";
+        is_validate= false;
+    }
+    if(c_ans.value.trim()==""){
+        ans4_error.innerHTML = "Correct  Answers can't be empty";
+        ans4_error.style.display = "block";
+        ans4_error.style.color = "red";
+        is_validate= false;
+    }
+    
     if(is_validate){
-        // form.submit();
+        form.submit();
     }
 }
 

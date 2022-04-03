@@ -38,7 +38,7 @@
     width: 100%;
     padding: 5px 0px;
 }
-.admin_nav_item a{
+.admin_nav_link{
     color: white;
     text-decoration: none;
 }
@@ -132,4 +132,29 @@ table{
     width: 30px;
     vertical-align: middle;
     color: #f74720;
+}
+.delete_btn{
+    background-color: #f74720;
+    color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+.enable_btn{
+    background-color: #049040;
+    color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+.pagination_btn{
+    padding: 2px 5px;
+    background-color: #f74720;
+    color: white;
+    font-size: 22px;
+    margin: 30px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.pagination_btn_row{
+    margin: 20px 0px;
+    text-align: center;
 }
