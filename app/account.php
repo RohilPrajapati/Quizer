@@ -1,3 +1,10 @@
+<?php
+    require_once 'config/utility.php';
+    session_start();
+    if($_SESSION['id']){
+        redirectAlertMessage("User is already login","index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
